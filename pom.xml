@@ -8,6 +8,7 @@
   <artifactId>my-app</artifactId>
   <version>1.0-SNAPSHOT</version>
   <name>my-app</name>
+  <packaging>war</packaging>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
   <properties>
