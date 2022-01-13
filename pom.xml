@@ -41,14 +41,27 @@
           <version>3.0.2</version>
         </plugin>
        <!-- default lifecycle, war packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging -->
-       <plugin>
+<plugin>
+    <artifactId>maven-war-plugin</artifactId>
+    <configuration>
+        <attachClasses>true</attachClasses>
+        <webXml>target/web.xml</webXml>
+        <webResources>
+            <resource>
+                <directory>src/main/webapp</directory>
+                <filtering>true</filtering>
+            </resource>
+        </webResources>
+    </configuration>
+</plugin>    
+ <!--  <plugin>
          <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
         <version>3.3.2</version>
          <configuration>
           <webappDirectory>/sample/servlet/container/deploy/directory</webappDirectory>
         </configuration>
-       </plugin>
+       </plugin> -->
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.8.0</version>
@@ -58,11 +71,14 @@
           <artifactId>maven-surefire-plugin</artifactId>
           <version>2.22.1</version>
         </plugin>
-        <plugin>
+         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.0.2</version>
         </plugin>
-        <plugin>
+  
+        <plugin> 
+
+
           <artifactId>maven-install-plugin</artifactId>
           <version>2.5.2</version>
         </plugin>
